@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { BookDemoButton } from "@/components/cta/cta-link";
 import { Section, SectionHeading, SectionSubhead } from "@/components/sections/section";
@@ -35,6 +36,16 @@ export default function ResultsPage() {
     <>
       <section className="border-b border-white/5">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+          <div className="mb-8 rounded-xl border border-coral/50 bg-coral/15 px-5 py-4 text-sm text-surface-light sm:text-base">
+            Every rooftop is covered by our 90-day money-back guarantee.{" "}
+            <Link
+              href="/guarantee"
+              className="font-semibold text-coral underline-offset-4 hover:underline"
+            >
+              See the terms
+            </Link>
+            .
+          </div>
           <Badge>{p.eyebrow}</Badge>
           <h1 className="mt-4 max-w-3xl text-4xl font-bold tracking-display text-white sm:text-5xl">
             {p.headline}
@@ -109,7 +120,7 @@ export default function ResultsPage() {
         <div className="mt-10 rounded-2xl border border-coral/30 bg-midnight-950 p-8">
           <h3 className="text-2xl font-bold text-white">{p.ctaHeadline}</h3>
           <div className="mt-6">
-            <BookDemoButton source="results-cta" label="Apply for the 30-day pilot" />
+            <BookDemoButton source="results-cta" label="Apply for the 90-day guarantee pilot" />
           </div>
         </div>
       </Section>

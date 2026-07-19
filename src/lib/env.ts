@@ -11,7 +11,7 @@ function readNumber(name: string, fallback: number) {
 
 /** Public marketing env (safe to expose on client via NEXT_PUBLIC_*) */
 export const publicEnv = {
-  siteUrl: read("NEXT_PUBLIC_SITE_URL", "https://dealerai.bridgepointai.com"),
+  siteUrl: read("NEXT_PUBLIC_SITE_URL", "https://bridgepoint-dealerai-marketing.vercel.app"),
   demoPhone: read("NEXT_PUBLIC_RETELL_DEMO_NUMBER", "1-800-555-0199"),
   retellWebCallKey: read("NEXT_PUBLIC_RETELL_WEB_CALL_KEY", ""),
   calendarEmbedUrl: read("NEXT_PUBLIC_CALENDAR_EMBED_URL", ""),
@@ -20,9 +20,8 @@ export const publicEnv = {
   companyName: "BridgePoint AI LLC",
   productName: "BridgePoint DealerAI",
   prices: {
-    coreMonthly: readNumber("NEXT_PUBLIC_PRICE_CORE_MONTHLY", 1497),
-    growthMonthly: readNumber("NEXT_PUBLIC_PRICE_GROWTH_MONTHLY", 2997),
-    dominateMonthly: readNumber("NEXT_PUBLIC_PRICE_DOMINATE_MONTHLY", 4997),
+    integration: readNumber("NEXT_PUBLIC_PRICE_INTEGRATION", 4997),
+    monthly: readNumber("NEXT_PUBLIC_PRICE_MONTHLY", 2997),
     annualMonthsFree: readNumber("NEXT_PUBLIC_PRICE_ANNUAL_MONTHS_FREE", 2),
   },
 };

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -26,6 +27,13 @@ export default function PricingPage() {
             {p.headline}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-steel">{p.subhead}</p>
+          <p className="mx-auto mt-6 max-w-xl text-sm text-surface-light">
+            Covered by{" "}
+            <Link href="/guarantee" className="font-semibold text-coral hover:text-coral-400">
+              {riskReversal.name}
+            </Link>
+            . 90 days. Full refund if we do not beat your baseline.
+          </p>
         </div>
       </section>
 
@@ -45,7 +53,12 @@ export default function PricingPage() {
             ))}
           </Accordion>
         </div>
-        <p className="mt-8 max-w-2xl text-sm text-steel">{riskReversal.short}</p>
+        <p className="mt-8 max-w-2xl text-sm text-steel">
+          {riskReversal.short}{" "}
+          <Link href="/guarantee" className="text-coral hover:text-coral-400">
+            Full detail on the Guarantee page.
+          </Link>
+        </p>
       </Section>
     </>
   );

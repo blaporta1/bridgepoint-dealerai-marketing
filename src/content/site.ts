@@ -15,6 +15,7 @@ export const nav = [
   { label: "For Sales", href: "/for-sales" },
   { label: "For Service", href: "/for-service" },
   { label: "Pricing", href: "/pricing" },
+  { label: "Guarantee", href: "/guarantee" },
   { label: "Results", href: "/results" },
   { label: "About", href: "/about" },
 ] as const;
@@ -29,13 +30,18 @@ export const ctas = {
   bookMyDemo: "Book My Demo",
   seeEmployees: "See all AI Employees",
   seePricing: "See pricing",
+  guarantee: "90-day money-back guarantee",
 } as const;
 
+/** Primary trust signal: The Board Doesn't Lie Guarantee */
 export const riskReversal = {
-  headline: "30-day performance pilot",
-  body: "If DealerAI does not set more appointments than your current process in the pilot window, you do not pay. We install it, we run it, we show the board. Risk sits with us.",
+  name: "The Board Doesn't Lie Guarantee",
+  headline: "The Board Doesn't Lie Guarantee",
+  body: "90 days. Full refund if we do not beat your own baseline. Measured inside your CRM, not ours.",
   short:
-    "30-day performance pilot: if we do not set more appointments than your current process, you do not pay.",
+    "90 days. If DealerAI does not set more appointments than your 90-day baseline before go-live, measured inside your own CRM, we refund every dollar you paid us.",
+  ctaLabel: "See the guarantee",
+  href: "/guarantee",
 };
 
 export const agents = [
@@ -132,7 +138,7 @@ export const home = {
       "Your dealership answers every call, works every lead, and books appointments 24/7.",
     subhead:
       "Without adding headcount. Missed calls, slow lead response, and dead aged leads are costing you units and gross every month. DealerAI plugs that leak.",
-    trust: "Live in 7 days. Done-for-you install. 30-day performance pilot.",
+    trust: "Live in 14 days. Done-for-you install. 90-day money-back guarantee.",
   },
   problem: {
     label: "The leak",
@@ -299,13 +305,20 @@ export const home = {
     },
     {
       q: "What are the contract terms?",
-      a: "Per-rooftop monthly plans with annual options. Multi-rooftop groups get custom terms. The 30-day performance pilot defines the start risk.",
+      a: "Integration is $4,997 per rooftop one time, credited in full against month one. Monthly is $2,997 per rooftop. Annual saves two months. Multi-rooftop groups get custom terms. Covered by The Board Doesn't Lie Guarantee for 90 days.",
     },
   ],
   finalCta: {
     headline: "Put an AI employee on the floor this month",
     subhead:
       "Book a 20-minute demo with our team, or call the AI right now and interview the product yourself.",
+  },
+  pricingTeaser: {
+    label: "Simple pricing",
+    headline: "One integration. One monthly. Full team.",
+    integration: "$4,997 one time, per rooftop",
+    monthly: "$2,997 per rooftop / month",
+    note: "Integration credited in full against month one. Covered by our 90-day money-back guarantee.",
   },
 };
 
@@ -368,29 +381,71 @@ export const pages = {
     seo: {
       title: "Pricing | BridgePoint DealerAI",
       description:
-        "Per-rooftop plans for AI employees. Core, Growth, and Dominate. Annual discount available. Multi-rooftop groups talk to sales.",
+        "DealerAI Full Integration $4,997 one time per rooftop. Monthly $2,997 per rooftop for all six AI employees. 90-day money-back guarantee.",
     },
     eyebrow: "Pricing",
-    headline: "Price per rooftop. Pay for outcomes, not seats.",
+    headline: "One integration. One monthly. Full team on the board.",
     subhead:
-      "Every tier is tied to the metric it moves. Toggle monthly or annual. Groups with multiple rooftops get a custom path.",
+      "Flat pricing per rooftop. Integration credited against month one. Covered by The Board Doesn't Lie Guarantee.",
     multiHeadline: "Multi-rooftop or dealer group?",
     multiBody:
       "Central playbooks, shared reporting, and rollout sequencing across stores. Pricing depends on rooftop count and agent mix.",
     faq: [
       {
         q: "Is there a setup fee?",
-        a: "Install is included in the pilot path discussed on the demo. Complex DMS or telephony work is scoped up front.",
+        a: "Yes. Integration is $4,997 per rooftop, one time, and it covers everything through go-live. That fee is credited in full against your first month of subscription, so if you stay past the guarantee window, integration effectively cost you nothing.",
       },
       {
-        q: "Can we start with one agent?",
-        a: "Yes. Core is designed as the entry wedge.",
+        q: "What is the money back guarantee?",
+        a: "90 days. If DealerAI does not set more appointments than your 90-day baseline before go-live, measured inside your own CRM, we refund every dollar you paid us. Full detail on the Guarantee page.",
       },
       {
-        q: "What does the pilot change about billing?",
-        a: "The 30-day performance pilot terms are confirmed on the demo and in the order form. If we miss the appointment bar, you do not pay.",
+        q: "Do you offer annual billing?",
+        a: "Yes. Annual saves two months. Talk to sales during your demo.",
+      },
+      {
+        q: "What about dealer groups running multiple rooftops?",
+        a: "Custom pricing based on rooftop count. We handle central playbooks, shared reporting, and rollout sequencing across stores.",
       },
     ],
+  },
+  guarantee: {
+    seo: {
+      title: "The Board Doesn't Lie Guarantee | BridgePoint DealerAI",
+      description:
+        "90 days. Full refund if DealerAI does not set more appointments than your own CRM baseline before go-live.",
+    },
+    eyebrow: "Our Promise",
+    headline: "The Board Doesn't Lie Guarantee",
+    subhead: "90 days. Full refund if we do not beat your own baseline.",
+    promise: [
+      "Run DealerAI for 90 days. If the AI does not set more appointments than your own 90-day baseline before go-live, measured inside your CRM and not ours, we refund every dollar you paid us. The $4,997 integration fee. Every monthly payment. All of it.",
+      "No partial refunds. No store credit. No exit interview required. You email us, we wire it back within 5 business days, and we unwind the integration at our expense.",
+      "And you keep the assets. Every call recording, every transcript, and the rebuilt lead follow-up playbook we built for your store stay with you. If we lose, you still walk away with more than you started with.",
+    ],
+    whyHeader: "Why we can offer this",
+    whyBody:
+      "Most dealers respond to internet leads in hours. DealerAI responds in seconds, around the clock, on every channel. If we cannot beat a follow-up process that misses your after-hours leads entirely, we do not deserve your money.",
+    termsHeader: "Four terms that keep this fair for both sides",
+    terms: [
+      {
+        title: "Baseline comes from your CRM.",
+        body: "The 90 days before go-live, pulled during integration and locked in writing. Objective and verifiable.",
+      },
+      {
+        title: "Minimum volume threshold.",
+        body: "Your rooftop needs at least 100 internet leads or inbound sales calls per month for the comparison to be meaningful. Below that, we will tell you before you sign.",
+      },
+      {
+        title: "Agents stay live the full 90 days.",
+        body: "Lead routing and phone forwarding stay connected. If the AI gets unplugged mid-pilot, the clock pauses until it is back on.",
+      },
+      {
+        title: "Claim window.",
+        body: "You have 30 days after day 90 to request the refund. Clean end date.",
+      },
+    ],
+    ctaHeadline: "Ready to put us on the board?",
   },
   results: {
     seo: {
@@ -457,49 +512,41 @@ export const pages = {
   },
 };
 
-export const pricingTiers: {
-  id: string;
-  name: string;
-  badge?: string;
-  forWho: string;
-  includes: string[];
-  metric: string;
-  featured: boolean;
-  priceKey: "coreMonthly" | "growthMonthly" | "dominateMonthly";
-}[] = [
-  {
-    id: "core",
-    name: "Core",
-    forWho: "Stores that need the leak plugged fast",
-    includes: ["Instant Lead Responder", "Missed Call Rescue"],
-    metric: "Speed-to-lead, recovered missed calls, first-contact rate",
-    featured: false,
-    priceKey: "coreMonthly",
-  },
-  {
-    id: "growth",
-    name: "Growth",
-    badge: "Most chosen",
-    forWho: "Sales and service teams that want the board full",
-    includes: [
-      "Everything in Core",
-      "Sales BDC Agent",
-      "Service and Customer Service Agent",
+export const pricingOffer = {
+  integration: {
+    id: "integration",
+    headline: "DealerAI Full Integration",
+    priceSubtext: "one time, per rooftop",
+    subhead: "Everything it takes to go live in 14 days",
+    callout: "Credited in full against month one.",
+    bullets: [
+      "CRM and DMS connection (VinSolutions, Elead, DealerSocket, CDK, Reynolds)",
+      "Phone routing and missed call capture wired into your existing numbers",
+      "All agents trained on your inventory feed, service menu, and store scripts",
+      "TCPA and consent compliance configured before the first outbound touch",
+      "Baseline report pulled from your CRM covering the last 90 days of appointments set, shown, and sold",
     ],
-    metric: "Appointments set, show rate, RO count",
-    featured: true,
-    priceKey: "growthMonthly",
   },
-  {
-    id: "dominate",
-    name: "Dominate",
-    forWho: "Dealer groups and stores running outbound and database hard",
-    includes: ["All six agents", "Outbound campaigns", "Enrichment Agent"],
-    metric: "Recovered aged database revenue, prioritized pipeline, full-funnel attribution",
-    featured: false,
-    priceKey: "dominateMonthly",
+  monthly: {
+    id: "monthly",
+    headline: "DealerAI Monthly",
+    priceSubtext: "per rooftop / month",
+    subhead: "All six AI employees, working every lead and every call",
+    bullets: [
+      "Instant Lead Responder",
+      "Sales BDC Agent",
+      "Service Agent",
+      "Missed Call Rescue",
+      "Recall and Reactivation",
+      "Enrichment Agent",
+      "Outbound campaigns",
+      "Full-funnel attribution reporting",
+    ],
   },
-];
+  multiHeadline: "Multi-rooftop or dealer group?",
+  multiBody:
+    "Central playbooks, shared reporting, and rollout sequencing across stores. Pricing depends on rooftop count and agent mix.",
+} as const;
 
 export const roles = [
   "Dealer Principal",

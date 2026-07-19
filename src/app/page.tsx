@@ -47,13 +47,22 @@ export default function HomePage() {
     name: "BridgePoint DealerAI",
     description: home.seo.description,
     brand: { "@type": "Brand", name: "BridgePoint AI" },
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "USD",
-      lowPrice: publicEnv.prices.coreMonthly,
-      highPrice: publicEnv.prices.dominateMonthly,
-      offerCount: 3,
-    },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "DealerAI Full Integration",
+        priceCurrency: "USD",
+        price: publicEnv.prices.integration,
+        description: "One time, per rooftop",
+      },
+      {
+        "@type": "Offer",
+        name: "DealerAI Monthly",
+        priceCurrency: "USD",
+        price: publicEnv.prices.monthly,
+        description: "Per rooftop / month",
+      },
+    ],
   };
 
   return (
@@ -88,6 +97,13 @@ export default function HomePage() {
               <CallAiButton size="xl" source="hero" />
             </div>
             <p className="mt-5 text-sm text-steel">{home.hero.trust}</p>
+            <Link
+              href="/guarantee"
+              className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-coral hover:text-coral-400"
+            >
+              90-day money-back guarantee
+              <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+            </Link>
           </div>
           <DashboardMockup />
         </div>
@@ -243,20 +259,63 @@ export default function HomePage() {
         <p className="mt-4 text-sm text-steel">{home.comparison.foot}</p>
       </Section>
 
-      {/* Risk reversal */}
+      {/* Guarantee: primary trust signal */}
       <Section tone="coral-band">
-        <div className="flex flex-col items-start justify-between gap-6 rounded-2xl border border-coral/30 bg-midnight-950/70 p-8 lg:flex-row lg:items-center">
+        <div className="flex flex-col items-start justify-between gap-6 rounded-2xl border border-coral/40 bg-midnight-950/80 p-8 shadow-glow lg:flex-row lg:items-center lg:p-10">
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 text-coral">
-              <CheckCircle2 className="h-5 w-5" />
-              <SectionLabel>{riskReversal.headline}</SectionLabel>
+              <CheckCircle2 className="h-6 w-6" aria-hidden />
+              <SectionLabel>Our Promise</SectionLabel>
             </div>
-            <p className="mt-3 text-lg font-semibold text-white sm:text-xl">
+            <h2 className="mt-3 text-2xl font-bold tracking-display text-white sm:text-3xl">
+              {riskReversal.headline}
+            </h2>
+            <p className="mt-3 text-base font-medium text-surface-light sm:text-lg">
               {riskReversal.body}
             </p>
           </div>
-          <BookDemoButton size="xl" source="risk-reversal" label="Start the pilot conversation" />
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row lg:flex-col">
+            <BookDemoButton size="xl" source="guarantee-home" label="Book a Demo" />
+            <Link
+              href="/guarantee"
+              className="inline-flex h-12 items-center justify-center rounded-md border border-steel/40 px-8 text-base font-semibold text-surface-light transition hover:border-coral hover:text-coral"
+            >
+              {riskReversal.ctaLabel}
+            </Link>
+          </div>
         </div>
+      </Section>
+
+      {/* Pricing teaser */}
+      <Section tone="darker">
+        <SectionLabel>{home.pricingTeaser.label}</SectionLabel>
+        <SectionHeading>{home.pricingTeaser.headline}</SectionHeading>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-midnight-950 p-6">
+            <p className="text-xs font-semibold uppercase tracking-wider text-steel">
+              Integration
+            </p>
+            <p className="mt-2 text-2xl font-bold text-white">
+              {home.pricingTeaser.integration}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-coral/30 bg-midnight-950 p-6">
+            <p className="text-xs font-semibold uppercase tracking-wider text-steel">
+              Monthly
+            </p>
+            <p className="mt-2 text-2xl font-bold text-white">
+              {home.pricingTeaser.monthly}
+            </p>
+          </div>
+        </div>
+        <p className="mt-4 text-sm text-steel">{home.pricingTeaser.note}</p>
+        <Link
+          href="/pricing"
+          className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-coral hover:text-coral-400"
+        >
+          See full pricing
+          <ArrowRight className="h-4 w-4" aria-hidden />
+        </Link>
       </Section>
 
       {/* FAQ */}

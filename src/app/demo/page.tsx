@@ -38,7 +38,7 @@ export default function DemoPage() {
           <ul className="mt-8 space-y-2 text-sm text-steel">
             <li>Under 30 seconds to complete the form</li>
             <li>AI texts within 60 seconds to confirm a time</li>
-            <li>30-day performance pilot available for qualified rooftops</li>
+            <li>Covered by The Board Doesn&apos;t Lie Guarantee for 90 days</li>
           </ul>
         </div>
         <DemoForm />
