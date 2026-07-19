@@ -42,14 +42,15 @@ Open [http://localhost:3000](http://localhost:3000).
 | `NEXT_PUBLIC_RETELL_WEB_CALL_KEY` | Retell web call widget key |
 | `NEXT_PUBLIC_CALENDAR_EMBED_URL` | Cal.com / Calendly embed |
 | `NEXT_PUBLIC_GTM_ID` | Google Tag Manager container |
-| `NEXT_PUBLIC_PRICE_*` | Public Core / Growth / Dominate prices |
+| `NEXT_PUBLIC_PRICE_INTEGRATION` | One-time integration fee per rooftop |
+| `NEXT_PUBLIC_PRICE_MONTHLY` | Monthly subscription per rooftop |
 
 Default public prices (change via env):
 
-- **Core** $1,497 / rooftop / month  
-- **Growth** $2,997 / rooftop / month  
-- **Dominate** $4,997 / rooftop / month  
-- **Annual:** 2 months free  
+- **Integration** $4,997 one time per rooftop (credited against month one)  
+- **Monthly** $2,997 per rooftop / month (all six agents)  
+- **Annual:** 2 months free on monthly only  
+- **Guarantee:** The Board Doesn't Lie Guarantee (90-day money-back)  
 
 ## Content
 
@@ -113,15 +114,16 @@ npm run lint
 | `/ai-employees` | Product / agents |
 | `/for-sales` | Sales BDC use case |
 | `/for-service` | Fixed ops use case |
-| `/pricing` | Core / Growth / Dominate |
+| `/pricing` | Integration + Monthly |
+| `/guarantee` | The Board Doesn't Lie Guarantee |
 | `/results` | Illustrative models + metric defs |
 | `/about` | BridgePoint AI |
 | `/demo` | Book a demo |
 | `/privacy` `/terms` `/tcpa` | Legal |
 
-## Approvals locked
+## Offer locked
 
-1. Brand Guide (coral, not gold)  
-2. 30-day pilot honored as written  
-3. Real public pricing numbers (env-driven defaults above)  
+1. Brand Guide tokens (coral accent on midnight)  
+2. Single integration + monthly pricing  
+3. The Board Doesn't Lie Guarantee (90-day full refund)  
 4. Problem strip stats labeled industry estimate  
